@@ -55,9 +55,6 @@ def __init__(_name: String[64], _symbol: String[32], _decimals: uint256, _total_
     self.transaction_fee_target = self.governor
     log Transfer(ZERO_ADDRESS, msg.sender, _total_supply)
 
-# add getter to view value via chainlink oracle
-# maybe: add function to call core address to view collatoralization / leverage
-
 
 @external
 def func(ab: uint256[2], c: uint256) -> uint256:
