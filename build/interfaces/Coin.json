@@ -104,22 +104,6 @@
         {
           "name": "_symbol",
           "type": "string"
-        },
-        {
-          "name": "_decimals",
-          "type": "uint256"
-        },
-        {
-          "name": "_total_supply",
-          "type": "uint256"
-        },
-        {
-          "name": "_minter",
-          "type": "address"
-        },
-        {
-          "name": "_governor",
-          "type": "address"
         }
       ],
       "outputs": [],
@@ -480,7 +464,7 @@
   ],
   "contractName": "Coin",
   "offset": null,
-  "sha1": "4fbf7078c63551fc0b8a433fdd0462d9da839825",
+  "sha1": "4f5f0b6263eb24635f5f1e722ebde461a2186b6d",
   "source": null,
   "type": "interface"
 }

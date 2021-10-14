@@ -15,16 +15,20 @@ def load_contract(addr):
 whale = a[0]
 
 def deploycoin():
-    return Coin.deploy("Coin Contract", "HODL", 18, 0, accounts[0], accounts[0], {'from': accounts[0]})
+    return Coin.deploy("Coin Contract", "COIN", {'from': accounts[0]})
 
 
 def deploycore(coin):
-    return Core.deploy("Core", coin.address, {'from': whale})
+    return Core.deploy("Core", "CORE", coin.address, {'from': whale})
 
 def main():
     coin = deploycoin()
     core = deploycore(coin)
 
-    coin.change_minter(core.address, {'from': whale})
+    def fcore(*args):
+        return core.functest(*args).return_value
 
-    return (coin, core)
+    def fcoin(*args):
+        return coin.func(*args).return_value
+
+    return (coin, core, fcore, fcoin)

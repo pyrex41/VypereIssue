@@ -128,5 +128,3 @@ development:
       evm_version: istanbul
       mnemonic: brownie
       fork: ftm-main
-
-dotenv: .env
