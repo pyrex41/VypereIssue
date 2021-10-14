@@ -1,0 +1,41 @@
+Error compiling: contracts/Core.vy
+Traceback (most recent call last):
+  File "/Users/reuben/.local/bin/vyper", line 8, in <module>
+    sys.exit(_parse_cli_args())
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/cli/vyper_compile.py", line 55, in _parse_cli_args
+    return _parse_args(sys.argv[1:])
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/cli/vyper_compile.py", line 129, in _parse_args
+    compiled = compile_files(
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/cli/vyper_compile.py", line 242, in compile_files
+    compiler_data = vyper.compile_codes(
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/evm/opcodes.py", line 224, in _wrapper
+    return fn(*args, **kwargs)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/__init__.py", line 110, in compile_codes
+    exc_handler(contract_name, exc)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/cli/vyper_compile.py", line 166, in exc_handler
+    raise exception
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/__init__.py", line 107, in compile_codes
+    out[contract_name][output_format] = OUTPUT_FORMATS[output_format](compiler_data)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/output.py", line 178, in build_bytecode_output
+    return f"0x{compiler_data.bytecode.hex()}"
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/phases.py", line 146, in bytecode
+    self._bytecode = generate_bytecode(self.assembly)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/phases.py", line 134, in assembly
+    self._assembly = generate_assembly(self.lll_nodes, self.use_ovm)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/phases.py", line 122, in lll_nodes
+    self._gen_lll()
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/phases.py", line 117, in _gen_lll
+    self._lll_nodes, self._lll_runtime = generate_lll_nodes(self.global_ctx, self.use_ovm)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/phases.py", line 109, in global_ctx
+    self._global_ctx = generate_global_context(
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/compiler/phases.py", line 224, in generate_global_context
+    return GlobalContext.get_global_context(vyper_module, interface_codes=interface_codes)
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/old_codegen/global_context.py", line 78, in get_global_context
+    global_ctx._interfaces[assigned_name] = extract_sigs(
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/ast/signatures/interface.py", line 121, in extract_sigs
+    return mk_full_signature_from_json(sig_code["code"])
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/ast/signatures/interface.py", line 59, in mk_full_signature_from_json
+    annotation=abi_type_to_ast(a["type"], 1048576),
+  File "/Users/reuben/.local/pipx/venvs/vyper/lib/python3.9/site-packages/vyper/ast/signatures/interface.py", line 41, in abi_type_to_ast
+    raise StructureException(f"Type {atype} not supported by vyper.")
+vyper.exceptions.StructureException: Type uint256[2] not supported by vyper.
