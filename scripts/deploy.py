@@ -31,4 +31,7 @@ def main():
     def fcoin(*args):
         return coin.func(*args).return_value
 
-    return (coin, core, fcore, fcoin)
+    def mytest():
+        fcore(1,2,3) == fcoin([1,2],3)
+
+    return (coin, core, fcore, fcoin, mytetst)

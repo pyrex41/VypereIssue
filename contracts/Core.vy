@@ -31,6 +31,5 @@ def __default__():
 
 
 @external
-@payable # delete line to make the project compile
 def functest(a: uint256, b: uint256, c: uint256) -> uint256:
     return Coin(self.coin).func([a,b], c)
